@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Palindrome</title>
+  </head>
+  <body>
+    <label>Enter String / number</label>
+    <input type="text" id="palinValue" />
+    <button onclick="palindrome()">Find Palindrome</button>
+    <script type="text/javascript">
+      function palindrome(palindromeString) {
+        palindromeString = document.getElementById("palinValue").value;
+        var isPalindrome = true;
+        var array = palindromeString.split("");
+        for (let index = 0; index < array.length / 2; index++) {
+          const firstElement = array[index];
+          const lastIndex = array.length - index - 1;
+          const lastElement = array[lastIndex];
+          if (lastElement !== firstElement) {
+            isPalindrome = false;
+            alert("Not");
+            break;
+          }
+        }
+        if (isPalindrome) {
+          alert("yes");
+        }
+      }
+      //palindrome("NITIN");
+    </script>
+  </body>
+</html>
